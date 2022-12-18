@@ -10,27 +10,25 @@
 ### Supervised Machine Learning Models:
 
 ### Model 1 RandomOverSampler:
-    The trip duration for the bikes is generally fairly short, with the vast majority in under an hour, and most of those lasting less than 20 minutes.
+    The balanced accuracy score is about 0.66, with a very low precision of 0.01 for high risk, and 1 for low risk, the recall of 0.71 for high risk is pretty good with a worse 0.6 for low risk.
 ![](/images/model1.png)
 ### Model 2 SMOTE:
-    The majority of users are male, with a few being 'unknown' gender, however whatever their gender, the trip duration isn't affected much.
+    The balanced accuracy score is about 0.66, with a very low precision of 0.01 for high risk, and 1 for low risk, the recall of 0.63 for high risk is less than the previous model with a higher score of 0.69 for low risk.
 ![](/images/model2.png)
 ### Model 3 ClusterCentroids:
-    The number of trips are highest on weekdays from 5-7pm, followed by 7-9am, this is likely for people leaving and going to work. This assumption is backed up by the fact that the spread is much more even during the weekend.
+    The balanced accuracy score is only 0.56, with a very low precision of 0.01 for high risk, and 1 for low risk, the recall of 0.61 for high risk and the 0.52 for low risk is the lowest scores so far.
 ![](/images/model3.png)
 ### Model 4 SMOTEENN:
-    The gender doesn't seem to have any affect on the concentration of trips for any given time, male and female both seem to same distribution when they're more likely to get the bike.
+    The balanced accuracy score is about 0.64, with a very low precision of 0.01 for high risk, and 1 for low risk, the recall of 0.72 for high risk is pretty good with a worse 0.57 for low risk. Overall its slightly worse than model 1.
 ![](/images/model4.png)
 ### Model 5 BalancedRandomForestClassifier:
-    The trips are highest for subscribers on Thursday and Friday for male and female, while the non subscriber customers seems to be highest during the weekend.
+    The balanced accuracy score is pretty good at 0.79, with a very low but improved precision of 0.03 for high risk, and 1 for low risk, the recall of 0.70 for high risk is pretty good with a much better 0.87 for low risk. Its the best model so far especially for predicitng low risk.
 ![](/images/model5.png)
 ### Model 6 EasyEnsembleClassifier:
-    The top starting locations are clustered in a certain area in Manhattan, with much fewer trips outside the island.
+    The balanced accuracy score is very good at 0.93, with a still low but improved precision of 0.09 for high risk, and 1 for low risk, the recall of 0.92 for high risk is pretty good with a much better 0.94 for low risk. Its the best model so of the 6 for every score.
 ![](/images/model6.png)
 
 ## Summary
-    The story gives some insights on the peak hours for trips and the locations of them broken down by geneder and customer type for the time the trips take place.
-### Visualization 1:
-    Getting starting and ending locations based on the genders or customer types would be helpful to see if there is any bias in locations for the gender and customer types and could help us understand the customers more.
-### Visualization 2:
-    Getting a breakdown of the trip times based on the age of customers could be helpful to see if there is a difference in trip times based on age and if so, to see if there's anyway to could encourage certain age groups to take longer or shorter trips depending on the data findings.
+    Of the 6 different models tested, the last one, the Easy Ensemble Classifier returns the highest scores for all of them.
+### Recommendation:
+    The model has a very high balanced accuracy score and very high scores for the recall for both high risk and low risk, meaning its very good at prediciting negative results, which in this case means prediciting low risk scores accurately. Given this information I would recommend using this model to predict who to lend money to since its able to predict which ones are low risk very accuratly, predicting only a few false negatives. The only drawback of the model is that its still bad at predicting too many false positives, which in this case means flagging people as high risk even when they are not. In this case the precision is not as important as the recall since that only means we are lending to a few less people than we would otherwise, not lending to people with high risk is more important to lower the overall risk of lending.
