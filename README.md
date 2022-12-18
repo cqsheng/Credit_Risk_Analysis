@@ -1,10 +1,9 @@
-# An analysis of Bikesharing in NYC
-
+# An analysis of Credit Risk
 
 ## Overview of Project
-    This project is used to create a visualization of bikesharing data in NYC in August 2019.
+    This project is used to determine and predict credit risk using supervised machine learning models.
 ### Purpose
-    The purpose of this project is to create a easy to understand visualization of bikesharing data for NYC to determine the if bikesharing is a viable business or not. As well as how the findings we have could help with a new business and what lessons we can learn from it.
+    The purpose of this project is to use different machine learning models to study alot of given information regarding credit risk and try to predict credit risk for data which doesn't contain the credit risk. The different models will study a list of models and try to predict the credit risk based off other given information.
 
 ## Results
     The following is a list of results and scores for all 6 different models, the results will be analyzed with the accompying pictures to determine how well they each performed and how relaible they are in predicting credit risk. 
